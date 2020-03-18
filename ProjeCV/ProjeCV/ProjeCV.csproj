@@ -344,6 +344,13 @@
     <Content Include="Views\Yetenekler\Index.cshtml" />
     <Content Include="Views\Hobiler\Index.cshtml" />
     <Content Include="Views\Konferanslar\Index.cshtml" />
+    <Content Include="Views\Deneyimler\YeniDeneyim.cshtml" />
+    <Content Include="Views\Egitim\YeniEgitim.cshtml">
+      <BrowseToURL>~/Egitim/YeniEgitim</BrowseToURL>
+    </Content>
+    <Content Include="Views\Yetenekler\YeniYetenek.cshtml" />
+    <Content Include="Views\Hobiler\YeniHobi.cshtml" />
+    <Content Include="Views\Konferanslar\YeniKonferans.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
