@@ -129,6 +129,9 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
+    <Compile Include="Controllers\DeneyimlerController.cs" />
+    <Compile Include="Controllers\EgitimController.cs" />
+    <Compile Include="Controllers\HakkimdaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -331,6 +334,10 @@
     <Content Include="startbootstrap-resume-gh-pages\vendor\jquery\jquery.min.map" />
     <Content Include="startbootstrap-resume-gh-pages\vendor\jquery\jquery.slim.min.map" />
     <Content Include="Views\Default\Index.cshtml" />
+    <Content Include="Views\Shared\_MainLayout.cshtml" />
+    <Content Include="Views\Hakkimda\Index.cshtml" />
+    <Content Include="Views\Deneyimler\Index.cshtml" />
+    <Content Include="Views\Egitim\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
