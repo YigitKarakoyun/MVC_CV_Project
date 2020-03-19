@@ -4,14 +4,12 @@
     Layout = "~/Views/Shared/_MainLayout.cshtml";
 }
 
-
-
-
 <table class="table table-bordered">
     <thead>
         <tr>
             <th>ID</th>
             <th>YETENEK</th>
+            <th>İŞLEMLER</th>
         </tr>
     </thead>
     <tbody>
@@ -20,9 +18,10 @@
             <tr>
                 <td>@x.ID</td>
                 <td>@x.SKILL</td>
-             
-
-
+                <td>
+                    <a href="/Yetenekler/Sil/@x.ID" class="btn btn-danger">Sil</a>
+                    <a href="/Yetenekler/Güncelle/@x.ID" class="btn btn-success">Güncelle</a>
+                </td>
             </tr>
         }
 

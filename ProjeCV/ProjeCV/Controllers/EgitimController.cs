@@ -31,7 +31,7 @@ namespace ProjeCV.Controllers
             return View();
         }
 
-        public ActionResult EgitimSil(int id)
+        public ActionResult Sil(int id)
         {
             var temp = db.TBL_EDUCATION.Find(id);
             db.TBL_EDUCATION.Remove(temp);

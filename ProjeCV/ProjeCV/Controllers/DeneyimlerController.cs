@@ -31,7 +31,7 @@ namespace ProjeCV.Controllers
             return View();
         }
 
-        public ActionResult DeneyimSil(int id)
+        public ActionResult Sil(int id)
         {
             var temp = db.TBL_EXPERIENCE.Find(id);
             db.TBL_EXPERIENCE.Remove(temp);

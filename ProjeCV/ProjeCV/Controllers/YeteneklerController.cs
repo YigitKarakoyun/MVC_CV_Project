@@ -31,5 +31,13 @@ namespace ProjeCV.Controllers
             db.SaveChanges();
             return View();
         }
+
+        public ActionResult Sil(int id)
+        {
+            var temp = db.TBL_SKILLS.Find(id);
+            db.TBL_SKILLS.Remove(temp);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }
