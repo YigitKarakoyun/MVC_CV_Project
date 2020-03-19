@@ -20,6 +20,7 @@
                 <td>@x.SKILL</td>
                 <td>
                     <a href="/Yetenekler/Sil/@x.ID" class="btn btn-danger">Sil</a>
+                    @Html.ActionLink("Sil Butonu","Sil",new {id=x.ID },new {@class="btn btn-warning",onclick="return confirm('Silmek İstiyormusunuz?')" })
                     <a href="/Yetenekler/Güncelle/@x.ID" class="btn btn-success">Güncelle</a>
                 </td>
             </tr>
