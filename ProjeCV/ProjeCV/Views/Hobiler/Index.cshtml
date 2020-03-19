@@ -10,17 +10,19 @@
         <tr>
             <th>ID</th>
             <th>HOBİLERİM</th>
+            <th>İŞLEMLER</th>
         </tr>
     </thead>
     <tbody>
         @foreach (var x in Model.Deger5)
         {
-            <tr>
-                <td>@x.ID</td>
-                <td>@x.INTEREST</td>
+        <tr>
+            <td>@x.ID</td>
+            <td>@x.INTEREST</td>
+            @Html.ActionLink("Sil Butonu", "Sil", new { id = x.ID }, new { @class = "btn btn-warning", onclick = "return confirm('Silmek İstiyormusunuz?')" })
+            <a href="/Hobiler/Güncelle/@x.ID" class="btn btn-success">Güncelle</a>
 
-
-            </tr>
+        </tr>
         }
 
     </tbody>

@@ -32,5 +32,12 @@ namespace ProjeCV.Controllers
 
             return RedirectToAction("Index");
         }
+        public ActionResult Sil(int id)
+        {
+            var temp = db.TBL_AWARDS.Find(id);
+            db.TBL_AWARDS.Remove(temp);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }
