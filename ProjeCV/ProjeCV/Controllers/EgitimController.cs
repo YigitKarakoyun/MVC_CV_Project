@@ -17,6 +17,7 @@ namespace ProjeCV.Controllers
             cs.Deger3 = db.TBL_EDUCATION.ToList();
             return View(cs);
         }
+
         [HttpPost]
         public ActionResult YeniEgitim(TBL_EDUCATION tbl_education)
         {
@@ -28,6 +29,14 @@ namespace ProjeCV.Controllers
         public ActionResult YeniEgitim()
         {
             return View();
+        }
+
+        public ActionResult EgitimSil(int id)
+        {
+            var temp = db.TBL_EDUCATION.Find(id);
+            db.TBL_EDUCATION.Remove(temp);
+            db.SaveChanges();
+            return RedirectToAction("Index");
         }
     }
 }

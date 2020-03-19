@@ -30,5 +30,13 @@ namespace ProjeCV.Controllers
         {
             return View();
         }
+
+        public ActionResult DeneyimSil(int id)
+        {
+            var temp = db.TBL_EXPERIENCE.Find(id);
+            db.TBL_EXPERIENCE.Remove(temp);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }

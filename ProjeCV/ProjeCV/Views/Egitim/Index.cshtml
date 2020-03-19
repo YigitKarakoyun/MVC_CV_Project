@@ -13,7 +13,7 @@
             <th>ALT BAŞLIK</th>
             <th>BÖLÜM</th>
             <th>GNO</th>
-
+            <th>İŞLEMLER</th>
         </tr>
     </thead>
     <tbody>
@@ -25,7 +25,10 @@
                 <td>@x.SUBTITLE</td>
                 <td>@x.DEPARTMENT</td>
                 <td>@x.GPA</td>
-
+                <td>
+                    <a href="/Egitim/EgitimSil/@x.ID" class="btn btn-danger">SİL</a>
+                    <a href="/Egitim/EgitimSil/@x.ID" class="btn btn-success">GÜNCELLE</a>
+                </td>
 
             </tr>
         }
