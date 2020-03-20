@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="DbMvcCvModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="DbMvcCvModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="sysdiagrams">
           <Key>
             <PropertyRef Name="diagram_id" />
@@ -15,8 +15,6 @@
           <Property Name="version" Type="int" />
           <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'DbMvcCv.dbo.TBL_ABOUT' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="TBL_ABOUT">
           <Key>
             <PropertyRef Name="ID" />
@@ -72,25 +70,14 @@ warning 6002: The table/view 'DbMvcCv.dbo.TBL_ABOUT' does not have a primary key
         </EntityType>
         <EntityContainer Name="DbMvcCvModelStoreContainer">
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBL_ABOUT" EntityType="Self.TBL_ABOUT" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TBL_AWARDS" EntityType="Self.TBL_AWARDS" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TBL_EDUCATION" EntityType="Self.TBL_EDUCATION" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TBL_EXPERIENCE" EntityType="Self.TBL_EXPERIENCE" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TBL_INTERESTS" EntityType="Self.TBL_INTERESTS" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TBL_SKILLS" EntityType="Self.TBL_SKILLS" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="TBL_ABOUT" EntityType="Self.TBL_ABOUT" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [TBL_ABOUT].[ID] AS [ID], 
-    [TBL_ABOUT].[NAME] AS [NAME], 
-    [TBL_ABOUT].[SURNAME] AS [SURNAME], 
-    [TBL_ABOUT].[ADDRESS] AS [ADDRESS], 
-    [TBL_ABOUT].[PHONE] AS [PHONE], 
-    [TBL_ABOUT].[MAIL] AS [MAIL], 
-    [TBL_ABOUT].[ABOUT] AS [ABOUT]
-    FROM [dbo].[TBL_ABOUT] AS [TBL_ABOUT]</DefiningQuery>
-          </EntitySet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="DbMvcCvModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
