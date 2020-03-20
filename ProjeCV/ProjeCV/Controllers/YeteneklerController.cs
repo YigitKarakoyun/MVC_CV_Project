@@ -5,16 +5,18 @@ using System.Web;
 using System.Web.Mvc;
 using ProjeCV.Models.Entity;
 using ProjeCV.Models.Sinif;
+using PagedList;
+using PagedList.Mvc;
+
 namespace ProjeCV.Controllers
 {
     public class YeteneklerController : Controller
     {
         // GET: Yetenekler
         DbMvcCvEntities db = new DbMvcCvEntities();
-        public ActionResult Index()
+        public ActionResult Index(int sayfa=1)
         {
-            Class1 cs = new Class1();
-            cs.Deger4 = db.TBL_SKILLS.ToList();
+            var cs = db.TBL_SKILLS.ToList().ToPagedList(sayfa,3);
             return View(cs);
         }
 

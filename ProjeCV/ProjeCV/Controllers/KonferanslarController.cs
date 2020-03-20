@@ -11,11 +11,16 @@ namespace ProjeCV.Controllers
     {
         // GET: Konferanslar
         DbMvcCvEntities db = new DbMvcCvEntities();
-        public ActionResult Index()
+        public ActionResult Index(string p)
         {
-            Class1 cs = new Class1();
-            cs.Deger6 = db.TBL_AWARDS.ToList();
-            return View(cs);
+            var degerler = from d in db.TBL_AWARDS
+                           select d;
+            if (!string.IsNullOrEmpty(p))
+            {
+                degerler = degerler.Where(m=>m.AWARD.Contains(p));
+            }
+
+            return View(degerler.ToList());
         }
 
         [HttpGet]

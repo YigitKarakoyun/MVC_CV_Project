@@ -1,4 +1,8 @@
-﻿@model ProjeCV.Models.Sinif.Class1
+﻿@using ProjeCV.Models.Entity
+@using PagedList
+@using PagedList.Mvc
+@model PagedList.IPagedList<TBL_SKILLS>
+
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_MainLayout.cshtml";
@@ -13,7 +17,7 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var x in Model.Deger4)
+        @foreach (var x in Model)
         {
             <tr>
                 <td>@x.ID</td>
@@ -28,4 +32,5 @@
 
     </tbody>
 </table>
+@Html.PagedListPager((IPagedList)Model,sayfa=>Url.Action("Index",new { sayfa}));
 <a href="/Yetenekler/YeniYetenek/" class="btn btn-info">Yeni Yetenek Ekle</a>
