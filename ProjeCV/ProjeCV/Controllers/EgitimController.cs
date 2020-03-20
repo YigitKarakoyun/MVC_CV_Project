@@ -38,5 +38,22 @@ namespace ProjeCV.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+        public ActionResult EgitimGetir(int id)
+        {
+            var temp = db.TBL_EDUCATION.Find(id);
+            return View("EgitimGetir",temp);
+
+        }
+        public ActionResult Guncelle(TBL_EDUCATION p)
+        {
+            var temp = db.TBL_EDUCATION.Find(p.ID);
+            temp.TITLE = p.TITLE;
+            temp.SUBTITLE = p.SUBTITLE;
+            temp.GPA = p.GPA;
+            temp.DEPARTMENT = p.DEPARTMENT;
+
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }

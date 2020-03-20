@@ -19,8 +19,11 @@
         <tr>
             <td>@x.ID</td>
             <td>@x.INTEREST</td>
-            @Html.ActionLink("Sil Butonu", "Sil", new { id = x.ID }, new { @class = "btn btn-warning", onclick = "return confirm('Silmek İstiyormusunuz?')" })
-            <a href="/Hobiler/Güncelle/@x.ID" class="btn btn-success">Güncelle</a>
+            <td>
+                @Html.ActionLink("Sil Butonu", "Sil", new { id = x.ID }, new { @class = "btn btn-warning", onclick = "return confirm('Silmek İstiyormusunuz?')" })
+                <a href="/Hobiler/HobiGetir/@x.ID" class="btn btn-success">Güncelle</a>
+            </td>
+            
 
         </tr>
         }

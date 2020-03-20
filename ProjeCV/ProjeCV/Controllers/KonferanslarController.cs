@@ -39,5 +39,18 @@ namespace ProjeCV.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+
+        public ActionResult KonferansGetir(int id)
+        {
+            var temp = db.TBL_AWARDS.Find(id);
+            return View("KonferansGetir",temp);
+        }
+        public ActionResult Guncelle(TBL_AWARDS p)
+        {
+            var temp = db.TBL_AWARDS.Find(p.ID);
+            temp.AWARD = p.AWARD;
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }

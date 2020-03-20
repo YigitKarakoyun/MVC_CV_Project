@@ -39,5 +39,19 @@ namespace ProjeCV.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+
+        public ActionResult YetenekGetir(int id)
+        {
+            var temp = db.TBL_SKILLS.Find(id);
+            return View("YetenekGetir",temp);
+        }
+
+        public ActionResult Guncelle(TBL_SKILLS p)
+        {
+            var temp = db.TBL_SKILLS.Find(p.ID);
+            temp.SKILL = p.SKILL;
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }
